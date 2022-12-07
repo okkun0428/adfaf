@@ -12,14 +12,13 @@ const connection =
 
 var port = process.env.PORT || 5000;
 
-app.get('/',(req, res)=>{
-    connection.query('SELECT * FROM test',(error,results)=>{
-        res.send('hello'+results[0].name+':'+results[0].text);
-          console.log(results)
-          console.log(results[0])
-          console.log(results[0].name)
-          console.log(results[0].text)
-    })
-})
+app.get('/', (req, res) => {
+    connection.query(
+      'SELECT * FROM all_subjects',
+      (error, results) => {
+        res.render('top.ejs',{subjects: results});
+      }
+    );
+ });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
