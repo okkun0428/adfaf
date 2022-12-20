@@ -15,7 +15,7 @@ const pool = mysql.createPool(db_config);
 
 app.set('port', (process.env.PORT || 5000));
 
-app.get('/', function(request, response) {
+app.get('/', function(req, res) {
    pool.getConnection(function(err, connection){
        connection.query('SELECT * FROM all_subjects', function(err,results){
        res.render('top.ejs',{subjects: results});
@@ -24,4 +24,6 @@ app.get('/', function(request, response) {
    });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(app.get('port'), function() {
+   console.log('heroku-mysql app is running on port', app.get('port'));
+ });
