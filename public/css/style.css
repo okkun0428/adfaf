@@ -1,10 +1,16 @@
 
 .subjectTitle{
     font-size:25px;
-	padding:5px;
+	margin:5px;
+	margin-bottom:30px;
+	text-align: center;
 }
 input{
 	margin-right:5px;
+	margin-bottom: 5px;
+}
+.subject-button{
+	border-bottom:1px solid black;
 }
 table , td, th {
 	border: 1px solid #595959;
@@ -26,4 +32,14 @@ th {
 }
 .shortage{
 	color:red;
+}
+.calculate{
+	display: inline-block;
+    width: 10%;
+	margin-bottom: 20px;
+}
+h1{
+	color:#444444;
+	font-size:50px;
+	margin:0px;
 }
